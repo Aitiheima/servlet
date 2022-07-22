@@ -1,28 +1,33 @@
 package com.itheima.web;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/demo2", loadOnStartup = 1)
-public class ServletDemo1 implements Servlet {
-    private ServletConfig servletConfig;
-
+public class ServletDemo3 implements Servlet {
+    @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        this.servletConfig = servletConfig;
+
     }
 
+    @Override
     public ServletConfig getServletConfig() {
-        return servletConfig;
+        return null;
     }
 
+    @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        System.out.println("Hello word!");
+        HttpServletRequest request=(HttpServletRequest)servletRequest;
+
     }
 
+    @Override
     public String getServletInfo() {
         return null;
     }
 
-    public void destroy() {}
+    @Override
+    public void destroy() {
+
+    }
 }
