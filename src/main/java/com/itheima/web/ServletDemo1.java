@@ -6,12 +6,15 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/demo2", loadOnStartup = 1)
 public class ServletDemo1 implements Servlet {
+    private ServletConfig servletConfig;
+
     public void init(ServletConfig servletConfig) throws ServletException {
+        this.servletConfig = servletConfig;
         System.out.println("init");
     }
 
     public ServletConfig getServletConfig() {
-        return null;
+        return servletConfig;
     }
 
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
