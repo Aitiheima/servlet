@@ -4,10 +4,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet("/demo1")
+@WebServlet(urlPatterns = "/demo2", loadOnStartup = 1)
 public class ServletDemo1 implements Servlet {
     public void init(ServletConfig servletConfig) throws ServletException {
-
+        System.out.println("init");
     }
 
     public ServletConfig getServletConfig() {
@@ -23,6 +23,6 @@ public class ServletDemo1 implements Servlet {
     }
 
     public void destroy() {
-
+        System.out.println("destory");
     }
 }
